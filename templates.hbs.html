@@ -1,0 +1,25 @@
+<template name="mainLayout">
+    Main layout:
+    {{> yield }}
+</template>
+
+<template name="itemLayout">
+    Item layout:
+    {{> yield }}
+    <div><a href="{{ pathFor 'items' }}">Back to items</a></div>
+</template>
+
+<template name="loading">
+    <div>Loading...</div>
+</template>
+
+<template name="items">
+    <div>Items ({{ itemsCount }}):</div>
+    {{# each items }}
+        <div><a href="{{ pathFor 'item' this }}">{{ name }}</a></div>
+    {{/ each }}
+</template>
+
+<template name="item">
+    <div>Item: {{ name }}</div>
+</template>
